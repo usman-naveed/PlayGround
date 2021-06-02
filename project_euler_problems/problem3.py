@@ -1,5 +1,5 @@
-# O(n^2 + n) => O(n^2)
-# terrible lol :/
+# O(n^2)
+# This is not really a feasible solution, will take 4 decades for large n
 
 def largest_prime_factor(n):
     count_nums = dict()
