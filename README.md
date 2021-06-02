@@ -1,5 +1,5 @@
 # PlayGround
-This repo is meant to be used as a reference for common coding questions. It also holds some of the data structurs I have
+This repo is meant to be used as a reference for common coding questions. It also holds some of the data structures I have
 created just as practice
 
 It holds some of the solutions I came up with while solving algo/coding problems. 
