@@ -1,6 +1,7 @@
 """
 Implementation of a linked list
 6/1/2021
+@author Usman Naveed
 """
 
 
@@ -82,26 +83,3 @@ class LinkedList:
             curr = curr.next  # move the head pointer to the next node to continue traverse
         st = [str(x) for x in vals]  # convert each value to a string so we can join it with the arrow
         return " -> ".join(st)
-
-
-first_node = Node(5)
-second_node = Node(67)
-third_node = Node(6)
-linked_list = LinkedList(first_node)
-linked_list.add_to_front(second_node)
-linked_list.add_to_front(third_node)
-print(linked_list)
-linked_list.remove_last_node()
-print(linked_list)
-linked_list.remove_last_node()
-print(linked_list)
-linked_list.remove_last_node()
-print(linked_list)
-linked_list.add_to_front(second_node)
-linked_list.add_to_front(third_node)
-print(linked_list)
-linked_list.remove_first_node()
-print(linked_list)
-linked_list.remove_first_node()
-print(linked_list)
-print(linked_list.remove_first_node())
