@@ -1,3 +1,6 @@
+from collections import deque as dq
+
+
 class Graph:
     def __init__(self, adj_list=None):
         if adj_list:
@@ -10,7 +13,7 @@ class Graph:
         if self.adj_list:
             for i in self.adj_list.keys():
                 for j in self.adj_list[i]:
-                    edges.append((i, j))
+                    edges.append({i, j})
         return edges
 
     def get_nodes(self):
@@ -22,18 +25,50 @@ class Graph:
     def add_edge(self):
         pass
 
-    def bfs(self):
-        pass
+    def bfs(self, start_node, visited=None):
+        if visited is None:
+            visited = set()
+        queue = dq(start_node)
+        while queue:
+            node = queue.popleft()
+            print(node)
+            for i in self.adj_list[node]:
+                if i not in visited:
+                    visited.add(i)
+                    queue.append(i)
+        return
 
-    def dfs(self):
-        pass
+    def dfs(self, start_point, visited=None):
+        if visited is None:
+            visited = set()
+        for node in self.adj_list[start_point]:
+            if start_point not in visited:
+                print(start_point)
+                visited.add(start_point)
+            if node not in visited:
+                print(node)
+                visited.add(node)
+                self.dfs(node, visited)
+        return
 
-graph = {"a": ["b", "c"],
-         "b": ["a", "d"],
-         "c": ["a", "d"],
-         "d": ["e"],
-         "e": ["d"]
-         }
+
+graph = {
+    "A": ["B", "C"],
+    "B": ["D"],
+    "C": ["D", "E"],
+    "D": ["B", "C"],
+    "E": ["C", "F"],
+    "F": ["E", "O", "I", "G"],
+    "G": ["F", "H"],
+    "H": ["G"],
+    "I": ["F", "J"],
+    "O": ["F"],
+    "J": ["K", "L", "I"],
+    "K": ["J"],
+    "L": ["J"]
+}
 g = Graph(graph)
-print(g.print_all_edges())
-print(g.get_nodes())
+g.dfs('A')
+#g.bfs('A')
+# print(g.print_all_edges())
+# print(g.get_nodes())
