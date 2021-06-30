@@ -68,7 +68,7 @@ graph = {
     "L": ["J"]
 }
 g = Graph(graph)
-g.dfs('A')
-#g.bfs('A')
+#g.dfs('A')
+g.bfs('A')
 # print(g.print_all_edges())
 # print(g.get_nodes())

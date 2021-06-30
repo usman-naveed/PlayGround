@@ -1,72 +1,25 @@
-from data_structures.LinkedList import Node, LinkedList
-from data_structures.StacksandQueues import Stack, Queue
 
-first_item = Node(5)
-second_item = Node(55)
-
-stack = Stack(first_item)
-stack.add(second_item)
-stack.add(Node(66))
-print(stack)
-stack.pop()
-print(stack)
-queue = Queue(Node(86))
-queue.add(Node(4444))
-queue.add(Node(99))
-print(queue)
-queue.remove()
-print(queue)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# testing out the linked list class
-'''
-first_node = Node(5)
-second_node = Node(67)
-third_node = Node(6)
-linked_list = LinkedList(first_node)
-linked_list.add_to_front(second_node)
-linked_list.add_to_front(third_node)
-print(linked_list)
-linked_list.remove_last_node()
-print(linked_list)
-linked_list.remove_last_node()
-print(linked_list)
-linked_list.remove_last_node()
-print(linked_list)
-linked_list.add_to_front(second_node)
-linked_list.add_to_front(third_node)
-print(linked_list)
-linked_list.remove_first_node()
-print(linked_list)
-linked_list.remove_first_node()
-print(linked_list)
-print(linked_list.remove_first_node())
-'''
-
+# class Solution:
+#     def in_order(self, tree, result=None):
+#         if result is None:
+#             result = []
+#         if tree.left:
+#             self.in_order(tree.left, result)
+#         result.append(tree.val)
+#         if tree.right:
+#             self.in_order(tree.right, result)
+#         return result
+#
+#     def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:
+#         # traverse each tree and store each node value in a result array
+#         # then compare the result arrays to see if the trees are equal. If trees are equal, then
+#         # the resulting arrays will be equal
+#         if p == q:
+#             return True
+#         if p is not None and q is None:
+#             return False
+#         if q is not None and p is None:
+#             return False
+#         result_p = self.in_order(p)
+#         result_q = self.in_order(q)
+#         return result_p == result_q

@@ -45,3 +45,7 @@ bt.in_order(root)
 print("")
 print("POST-ORDER")
 bt.post_order(root)
+
+
+
+
